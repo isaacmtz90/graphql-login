@@ -2,8 +2,8 @@ import React, { ReactElement } from 'react';
 import './App.css';
 
 import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
-import { Login } from './containers/Login';
 import { Account } from './containers/Account';
+import { Login } from './containers/Login';
 
 function App(): ReactElement {
     return (
