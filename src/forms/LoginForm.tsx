@@ -2,7 +2,7 @@ import React from 'react';
 import { withRouter } from 'react-router-dom';
 import styled from 'styled-components';
 import { AlertBox } from '../components/AlertBox';
-import { EmailInput } from '../components/EmailInput';
+import { TextInput as EmailInput } from '../components/TextInput';
 import { PasswordInput } from '../components/PasswordInput';
 import { SubmitButton } from '../components/SubmitButton';
 import { makeStyles } from '@material-ui/core/styles';
@@ -109,14 +109,11 @@ const FormikWrappedForm = withFormik<ICustomFormProps, IFormValues>({
         // Set the session token
         const jwt = loginResponse?.data?.login?.jwt;
         setSession(jwt || '');
-        console.log(props);
-        console.log('redirect');
         props.history?.push('/account');
     },
 })(InnerLoginForm);
 
 const ConnectedLoginForm = (props: IInheritedProps): JSX.Element => {
-    console.log(props);
     // Hook to handle the login action and any error that might happen
     const [loginUser, { error: mutationError }] = useMutation(LOGIN_MUTATION);
     return (

@@ -1,6 +1,7 @@
 import React from 'react';
 
 import styled from 'styled-components';
+import { AccountForm } from '../forms/AccountForm';
 import { IInheritedProps } from '../App';
 
 const Heading = styled.h1`
@@ -18,7 +19,8 @@ export const Account = (props: IInheritedProps): JSX.Element => {
     console.log('account');
     return (
         <FormWrapper>
-            <Heading>Account Info</Heading>
+            <Heading>User Account</Heading>
+            <AccountForm {...props} />
         </FormWrapper>
     );
 };

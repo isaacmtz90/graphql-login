@@ -3,15 +3,15 @@ import React from 'react';
 import { FieldProps } from 'formik';
 import TextField from '@material-ui/core/TextField';
 
-type EmailInputProps = {
+type TextInputProps = {
     label?: string;
 };
 
-export const EmailInput = ({
+export const TextInput = ({
     field,
     form,
     ...props
-}: FieldProps & EmailInputProps): JSX.Element => {
+}: FieldProps & TextInputProps): JSX.Element => {
     const { name } = field;
     const error = !!form.errors[name] || false;
     const touched = !!form.touched[name] || false;

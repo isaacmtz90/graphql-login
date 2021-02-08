@@ -7,7 +7,6 @@ export const PrivateRoute = ({
     component: Component,
     ...rest
 }: RouteProps): JSX.Element | null => {
-    console.log(Component);
     if (!Component) return null;
     return (
         // Show the component only when the user is logged in
