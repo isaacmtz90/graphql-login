@@ -13,17 +13,16 @@ export const PasswordInput = ({
     ...props
 }: FieldProps & PasswordInputProps): JSX.Element => {
     const { name } = field;
-    const error = form.errors[name] || false;
-    const touched = form.touched[name] || false;
+    const error = !!form.errors[name] || false;
+    const touched = !!form.touched[name] || false;
     return (
         <TextField
             type="password"
             variant="outlined"
             name={name}
             id={name}
-            placeholder={name}
-            error={!!error && !!touched}
-            helperText={error ? error : ''}
+            error={error && touched}
+            helperText={error && touched ? form.errors[name] : ''}
             {...props}
         />
     );

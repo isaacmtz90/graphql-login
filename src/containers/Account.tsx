@@ -1,5 +1,24 @@
-import React, { FC, ReactElement } from 'react';
+import React from 'react';
 
-export const Account: FC<Record<string, unknown>> = (): ReactElement => {
-    return <h2>Account</h2>;
+import styled from 'styled-components';
+import { IInheritedProps } from '../App';
+
+const Heading = styled.h1`
+    font-size: 65px;
+    margin: 10px;
+`;
+
+const FormWrapper = styled.div`
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+`;
+
+export const Account = (props: IInheritedProps): JSX.Element => {
+    console.log('account');
+    return (
+        <FormWrapper>
+            <Heading>Account Info</Heading>
+        </FormWrapper>
+    );
 };

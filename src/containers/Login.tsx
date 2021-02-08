@@ -1,5 +1,7 @@
 import React from 'react';
+
 import styled from 'styled-components';
+import { IInheritedProps } from '../App';
 import { LoginForm } from '../forms/LoginForm';
 
 const Heading = styled.h1`
@@ -13,9 +15,9 @@ const FormWrapper = styled.div`
     align-items: center;
 `;
 
-export const Login = (): JSX.Element => (
+export const Login = (props: IInheritedProps): JSX.Element => (
     <FormWrapper>
         <Heading>GraphQL Login</Heading>
-        <LoginForm />
+        <LoginForm {...props} />
     </FormWrapper>
 );
